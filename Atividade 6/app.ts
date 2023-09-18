@@ -3,6 +3,7 @@ import { Crypt } from "./crypt";
 import { Rent } from "./rent";
 import { User } from "./user";
 import crypto from 'crypto';
+import { Location } from "./location";
 
 export class App {
     users: User[] = []
@@ -87,8 +88,8 @@ export class App {
         }
         bike.Location.state = state;
         bike.Location.city = city;
-        bike.Location.latitude = latitude;
-        bike.Location.longitude = longitude;
+        bike.Location.latitude = location.latitude;
+        bike.Location.longitude = location.longitude;
     }
 
     listUsers(): User[] {
