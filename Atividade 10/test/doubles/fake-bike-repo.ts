@@ -30,4 +30,10 @@ export class FakeBikeRepo implements BikeRepo {
         const bikeIndex = this.bikes.findIndex(bike => bike.id === id)
         if (bikeIndex !== -1) this.bikes[bikeIndex] = bike
     }
+
+    findOpenRentsFor(userEmail: string): Rent[] {
+        return this.rent.filter(
+          (rent) => rent.userEmail === userEmail && rent.returnDate === null
+        );
+      }
 }
